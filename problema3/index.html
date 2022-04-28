@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Paises</h1>
+    <button type=”submit”>Obtener información</button>
+
+    <div id="contenedor">
+        <pre id="cldr"><h2>CLDR</h2></pre>
+        <pre id="capital_cldr"><h2>Capital</h2></pre>
+        <pre id="fips"><h2>FIPS</h2></pre>
+        <pre id="fifa"><h2>FIFA</h2></pre>
+        <pre id="continents"><h2>CONTINENT</h2></pre>
+        <pre id="languages"><h2>LANGUAGES</h2></pre>
+        <pre id="geoname_id"><h2>GEONAME ID</h2></pre>
+        <pre id="ds"><h2>DS</h2></pre>
+
+    </div>
+
+
+
+
+
+</body>
+<script>
+    $(document).ready(function () {
+        var url = "https://pkgstore.datahub.io/core/country-codes/country-codes_json/data/616b1fb83cbfd4eb6d9e7d52924bb00a/country-codes_json.json";
+        $("button").click(function () {
+            $.ajax({
+                dataType: 'json',
+                url: url
+            }).then(function (data) {
+
+                for (var i = 0; i < data.length; i++) {
+                    $("#cldr").append(data[i]["CLDR display name"] + "\n")
+                    $("#capital_cldr").append(data[i].Capital + "\n")
+                    $("#fips").append(data[i].FIPS + "\n")
+                    $("#fifa").append(data[i].FIFA + "\n")
+                    $("#continents").append(data[i].Continent + "\n")
+                    $("#languages").append(data[i].Languages + "\n")
+                    $("#geoname_id").append(data[i]["Geoname ID"] + "\n")
+                    $("#ds").append(data[i].DS + "\n")
+
+
+
+
+
+                }
+            })
+        });
+    });
+</script>
+
+</html>

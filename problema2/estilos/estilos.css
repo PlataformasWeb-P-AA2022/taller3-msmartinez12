@@ -1,0 +1,9 @@
+#contenedor{
+    display: flex;
+    justify-content: space-around;
+}
+
+#datos_finales{
+    font-size: 1.5em;
+    font-weight: bold;
+}

@@ -1,5 +1,6 @@
 <!Doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,34 +10,57 @@
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="estilos/estilos.css" type="text/css" />
   <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
+    $(function () {
+      $("#datepicker").datepicker();
+    });
   </script>
 </head>
+
 <body>
-    <id>
-        <p>Nombre:</p>
-        <input type="text" id="nombre">
-    
-        <p>Apellido:</p>
-        <input type="text" id="apellido">
-    
-        <p>Fecha:</p> 
-        <input type="text" id="datepicker"></p>
-    
-        <button id="boton" onclick="muestraMensaje()">Generar Mensaje</button>
-    
-        <script>
-            function muestraMensaje() {
-                 console.log(document.getElementById("nombre").value)
-                 console.log(document.getElementById("apellido").value)
-                 console.log(document.getElementById("datepicker").value)
-            }
-        </script>
-    </id>
-    
- 
- 
+  <div id="contenedor">
+    <div>
+      <h2>Nombre:</h2>
+      <input type="text" id="nombre">
+
+      <h2>Apellido:</h2>
+      <input type="text" id="apellido">
+
+      <h2>Fecha:</h2>
+      <input type="text" id="datepicker">
+
+      <br>
+
+      <button id="boton" onclick="muestraMensaje()">Generar Mensaje</button>
+
+
+    </div>
+
+    <div id="datos_finales">
+      <h1 id="contenido_datos"></h1>
+      <p id="contenido_nombre"></p>
+      <p id="contenido_apellido"></p>
+      <p id="contenido_fecha"></p>
+    </div>
+
+  </div>
+
+
+
 </body>
+
+
+<script>
+  function muestraMensaje() {
+    console.log(document.getElementById("nombre").value)
+    console.log(document.getElementById("apellido").value)
+    console.log(document.getElementById("datepicker").value)
+
+    document.getElementById('contenido_datos').append("Datos ingresados")
+    document.getElementById('contenido_nombre').append(document.getElementById("nombre").value)
+    document.getElementById('contenido_apellido').append(document.getElementById("apellido").value)
+    document.getElementById('contenido_fecha').append(document.getElementById("datepicker").value)
+
+  }
+</script>
+
 </html>
