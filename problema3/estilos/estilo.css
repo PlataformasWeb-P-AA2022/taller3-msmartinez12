@@ -1,3 +1,7 @@
+body{
+    max-width: 100%;
+}
+
 #contenedor{
     display: flex;
     justify-content: space-between;

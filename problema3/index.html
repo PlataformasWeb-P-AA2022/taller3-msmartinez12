@@ -12,7 +12,6 @@
 
 <body>
     <h1>Paises</h1>
-    <button type=”submit”>Obtener información</button>
 
     <div id="contenedor">
         <pre id="cldr"><h2>CLDR</h2></pre>
@@ -34,7 +33,6 @@
 <script>
     $(document).ready(function () {
         var url = "https://pkgstore.datahub.io/core/country-codes/country-codes_json/data/616b1fb83cbfd4eb6d9e7d52924bb00a/country-codes_json.json";
-        $("button").click(function () {
             $.ajax({
                 dataType: 'json',
                 url: url
@@ -56,7 +54,6 @@
 
                 }
             })
-        });
     });
 </script>
 
